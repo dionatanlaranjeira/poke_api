@@ -33,7 +33,7 @@ class FindByNameCommand extends Command {
 ID: ${pokemon.id}
 Pokemon ${pokemon.name.substring(0, 1).toUpperCase()}${pokemon.name.substring(1)}
 Altura: ${pokemon.height / 10}m
-Peso: ${pokemon.weight / 4.53}lbs / ${pokemon.weight / 10}kg''');
+Peso: ${(pokemon.weight / 4.53).toStringAsFixed(2)}lbs / ${pokemon.weight / 10}kg''');
     print('----------------------------------');
     print('Tipos:');
     for (var type in pokemon.types) {
