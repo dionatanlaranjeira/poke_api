@@ -1,5 +1,6 @@
 import 'package:args/command_runner.dart';
 import 'package:poke_api/src/commands/pokemons/subcommands/find_by_id_command.dart';
+import 'package:poke_api/src/commands/pokemons/subcommands/find_by_name_command.dart';
 import 'package:poke_api/src/repositories/pokemon_repository.dart';
 
 class PokemonsCommand extends Command {
@@ -12,5 +13,6 @@ class PokemonsCommand extends Command {
   PokemonsCommand() {
     final pokemonRepository = PokemonRepository();
     addSubcommand(FindByIdCommand(pokemonRepository));
+    addSubcommand(FindByNameCommand(pokemonRepository));
   }
 }

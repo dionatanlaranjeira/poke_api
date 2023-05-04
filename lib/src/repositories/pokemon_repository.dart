@@ -30,4 +30,20 @@ class PokemonRepository {
       throw Exception();
     }
   }
+
+  findByName(String name) async {
+    try {
+      final pokemonResult =
+          await Dio().get('https://pokeapi.co/api/v2/pokemon/$name');
+
+      if (pokemonResult.data == null) {
+        throw Exception('O resultado da requisição é nulo');
+      }
+
+      return Pokemon.fromMap(pokemonResult.data);
+    } on DioError catch (e) {
+      print(e);
+      throw Exception();
+    }
+  }
 }
